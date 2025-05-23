@@ -10,20 +10,18 @@ body {
 .navbar {
     background-color: #ffffff !important;
     transition: all 0.3s ease-in-out;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 main {
-    min-height: 75vh !important; /* vh-100 əvəzinə */
-    height: auto;
-}
-
-main {
+  position: relative;
   background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
   color: #333;
   min-height: 75vh !important;
   height: auto;
 }
-
 
 @keyframes gradientBG {
   0% {background-position: 0% 50%;}
@@ -106,4 +104,79 @@ footer a:hover {
     .navbar-nav {
         text-align: center;
     }
+}
+
+/* Floating Icons Background */
+.animated-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.animated-icons i{
+    position: absolute;
+    bottom: -100px; /* ekranın aşağısından başlasın */
+    color: rgba(255, 255, 255, 0.552);
+    font-size: 5rem!important;
+    animation: floatIcon 10s linear infinite;
+    z-index: 0;
+    left: calc(100% * var(--i) / 10); /* fərqli mövqelər üçün */
+}
+
+@keyframes floatIcon {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh); /* tam yuxarı qalxsın */
+        opacity: 0;
+    }
+}
+
+
+
+/* Random placement (nth-child) */
+.animated-icons i:nth-child(1) {
+    left: 5%;
+    font-size: 2rem;
+    animation-delay: 0s;
+}
+.animated-icons i:nth-child(2) {
+    left: 15%;
+    font-size: 2.5rem;
+    animation-delay: 3s;
+}
+.animated-icons i:nth-child(3) {
+    left: 30%;
+    font-size: 3rem;
+    animation-delay: 6s;
+}
+.animated-icons i:nth-child(4) {
+    left: 45%;
+    font-size: 2rem;
+    animation-delay: 9s;
+}
+.animated-icons i:nth-child(5) {
+    left: 60%;
+    font-size: 2.5rem;
+    animation-delay: 12s;
+}
+.animated-icons i:nth-child(6) {
+    left: 75%;
+    font-size: 3rem;
+    animation-delay: 15s;
+}
+.animated-icons i:nth-child(7) {
+    left: 90%;
+    font-size: 2rem;
+    animation-delay: 18s;
 }
