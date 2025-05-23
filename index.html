@@ -19,6 +19,11 @@
     <!-- Custom CSS (optional) -->
 </head>
 <body>
+    
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <div id="main-content" style="opacity: 0;">
 
     <!-- Header / Navbar -->
     <header>
@@ -59,12 +64,12 @@
                                 <li><a class="dropdown-item" href="/Account/Logout">Logout</a></li>
                             </ul>
                         </li>
-
+                        
                         <!-- Sample: If user is not logged in -->
                         <!--
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Account/Login">Login</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Account/Login">Login</a>
+                            </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/Account/Register">Sign Up</a>
                         </li>
@@ -75,32 +80,31 @@
         </nav>
     </header>
 
-<main class="d-flex align-items-center justify-content-center text-center bg-light position-relative overflow-hidden">
-  <!-- Animated background container -->
-<div class="animated-icons">
-  <i class="fab fa-github"></i>
-  <i class="fab fa-js"></i>
-  <i class="fab fa-html5"></i>
-  <i class="fab fa-css3-alt"></i>
-  <i class="fab fa-react"></i>
-  <i class="fab fa-node-js"></i>
-  <i class="fab fa-python"></i>
-</div>
+    <main class="d-flex align-items-center justify-content-center text-center bg-light position-relative overflow-hidden">
+      <!-- Animated background container -->
+        <div class="animated-icons">
+          <i class="fab fa-github"></i>
+          <i class="fab fa-js"></i>
+          <i class="fab fa-html5"></i>
+          <i class="fab fa-css3-alt"></i>
+          <i class="fab fa-react"></i>
+          <i class="fab fa-node-js"></i>
+          <i class="fab fa-python"></i>
+        </div>
+
+            <div class="p-4 rounded shadow bg-white animate__animated animate__fadeIn" style="position: relative; z-index: 10;">
+                <h1 class="fw-bold mb-3">Xoş gəlmisiniz!</h1>
+                <p class="lead mb-4">AzJobNest-də davam etmək üçün hesabınıza daxil olun və ya qeydiyyatdan keçin.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                  <a href="/Account/Login" class="btn btn-primary px-4">Login</a>
+                  <a href="/Account/Register" class="btn btn-outline-primary px-4">Sign Up</a>
+                </div>
+            </div>
+        </main>
 
 
-  <div class="p-4 rounded shadow bg-white animate__animated animate__fadeIn" style="position: relative; z-index: 10;">
-    <h1 class="fw-bold mb-3">Xoş gəlmisiniz!</h1>
-    <p class="lead mb-4">AzJobNest-də davam etmək üçün hesabınıza daxil olun və ya qeydiyyatdan keçin.</p>
-    <div class="d-flex justify-content-center gap-3 flex-wrap">
-      <a href="/Account/Login" class="btn btn-primary px-4">Login</a>
-      <a href="/Account/Register" class="btn btn-outline-primary px-4">Sign Up</a>
-    </div>
-  </div>
-</main>
-
-
-    <!-- Footer -->
-<footer class="bg-light text-dark mt-5 border-top shadow-sm">
+        <!-- Footer -->
+    <footer class="bg-light text-dark mt-5 border-top shadow-sm">
     <div class="container py-4">
         <div class="row">
             <!-- About -->
@@ -139,32 +143,12 @@
             &copy; 2025 AzJobNest. All rights reserved.
         </div>
     </div>
-</footer>
+    </footer>
 
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-  const isAuthenticated = false; // bunu backend-dən gələn cookie/tokenlə təyin edə bilərsən
-
-  const protectedRoutes = ["/Projects", "/Messages", "/Jobs/Post", "/Freelancers"];
-  const currentPath = window.location.pathname;
-
-  if (!isAuthenticated && protectedRoutes.includes(currentPath)) {
-    window.location.href = "/Account/Login";
-  }
-
-  const icons = document.querySelectorAll('.animated-icons i');
-
-icons.forEach(icon => {
-    const left = Math.floor(Math.random() * 91); // 0% - 90%
-    const fontSize = (Math.random() * 1.5 + 1.5).toFixed(1); // 1.5rem - 3.0rem
-    const delay = Math.floor(Math.random() * 20); // 0s - 19s
-
-    icon.style.left = `${left}%`;
-    icon.style.fontSize = `${fontSize}rem`;
-    icon.style.animationDelay = `${delay}s`;
-});
-</script>
+    <script src="./script.js"></script>
+    </div>
 </body>
 </html>
