@@ -119,12 +119,25 @@
 			}
 
 		/* Responsive tweaks */
+        @media (max-width: 767.98px) {
+            .mx-3 {
+              margin-left: 0 !important;
+              margin-right: 0 !important;
+            }
+            .p-4 {
+              padding: 1rem !important;
+            }
+
+        }
+
 		@media (max-width: 768px) {
 			main .shadow {
 				margin: 0 1rem;
 				padding: 30px 15px;
 			}
-
+            .col-12.col-md-6.mx-3.my-3 {
+                display: none !important;
+            }
 			.navbar-nav {
 				text-align: center;
 			}
@@ -285,25 +298,73 @@
 				</div>
 			</nav>
 		</header>
+<main style="min-height: 75vh;">
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="min-height: 75vh;">
 
-        <main class="d-flex align-items-center justify-content-center text-center bg-light position-relative overflow-hidden">
-    <!-- Animated background container -->
-    <div class="animated-icons">
-        <i class="fab fa-github"></i>
-        <i class="fab fa-js"></i>
-        <i class="fab fa-html5"></i>
-        <i class="fab fa-css3-alt"></i>
-        <i class="fab fa-react"></i>
-        <i class="fab fa-node-js"></i>
-        <i class="fab fa-python"></i>
-    </div>
+            <!-- Sol tərəf: Form -->
+            <div class="col-12 col-md-5 shadow p-4 bg-white rounded mx-md-3 my-3">
+                <h2 class="mb-4 text-center">Qeydiyyat</h2>
 
-    <div class="p-4 rounded shadow bg-white animate__animated animate__fadeIn" style="position: relative; z-index: 10;">
-        <h1 class="fw-bold mb-3">Xoş gəlmisiniz!</h1>
-        <p class="lead mb-4">AzJobNest-də davam etmək üçün hesabınıza daxil olun və ya qeydiyyatdan keçin.</p>
-        <div class="d-flex justify-content-center gap-3 flex-wrap">
-            <a href="./login.html" class="btn btn-primary px-4">Giriş</a>
-            <a href="./register.html" class="btn btn-outline-primary px-4">Qeydiyyat</a>
+                <form action="/Account/Register" method="post" id="registerForm" novalidate>
+                    <div class="text-danger mb-3" id="validationSummary"></div>
+
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Ad</label>
+                        <input type="text" id="Name" name="Name" class="form-control" placeholder="Adınızı daxil edin" />
+                        <span class="invalid-feedback d-block" id="NameError"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Lastname" class="form-label">Soyad</label>
+                        <input type="text" id="Lastname" name="Lastname" class="form-control" placeholder="Soyadınızı daxil edin" />
+                        <span class="invalid-feedback d-block" id="LastnameError"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="UserName" class="form-label">İstifadəçi adı</label>
+                        <input type="text" id="UserName" name="UserName" class="form-control" placeholder="İstifadəçi adınızı daxil edin" />
+                        <span class="invalid-feedback d-block" id="UserNameError"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email ünvanı</label>
+                        <input type="email" id="Email" name="Email" class="form-control" placeholder="email@example.com" />
+                        <span class="invalid-feedback d-block" id="EmailError"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Password" class="form-label">Parol</label>
+                        <input type="password" id="Password" name="Password" class="form-control" placeholder="Ən az 6 simvol" />
+                        <span class="invalid-feedback d-block" id="PasswordError"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="ConfirmPasswor" class="form-label">Parolu təsdiqlə</label>
+                        <input type="password" id="ConfirmPasswor" name="ConfirmPasswor" class="form-control" placeholder="Parolu yenidən daxil edin" />
+                        <span class="invalid-feedback d-block" id="ConfirmPassworError"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Qeydiyyat</button>
+                </form>
+            </div>
+
+            <!-- Sağ tərəf: Animasiya ilə -->
+            <div class="col-12 col-md-6 mx-3 my-3">
+                <div class="p-4 bg-light rounded h-100 d-flex flex-column justify-content-center align-items-center text-center">
+                    <h3>Xoş gəldiniz!</h3>
+                    <p>Qeydiyyat formunu doldurun və saytda tam funksionallıq əldə edin.</p>
+
+                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_5ngs2ksb.json"
+                                   background="transparent"
+                                   speed="1"
+                                   style="width: 300px; height: 200px;"
+                                   loop
+                                   autoplay>
+                    </lottie-player>
+                </div>
+            </div>
+
         </div>
     </div>
 </main>
@@ -351,7 +412,7 @@
 
 		<!-- Bootstrap JS -->
 		<!-- səhifənin sonunda, body bağlanmazdan əvvəl -->
-		<script src="https://unpkg.com/@@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="./assets/js/script.js"></script>
 		<script>
