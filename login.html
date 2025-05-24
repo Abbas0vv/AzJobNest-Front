@@ -21,6 +21,7 @@
 
 		/* Navbar */
 		.navbar {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 			background-color: #ffffff !important;
 			transition: all 0.3s ease-in-out;
 			position: sticky;
@@ -303,87 +304,64 @@
 			</nav>
 		</header>
 
-		<main style="min-height: 75vh;">
+<main style="min-height: 75vh;">
     <div class="container">
         <div class="row justify-content-center align-items-center" style="min-height: 75vh;">
             
             <!-- Sol tərəf: Form -->
             <div class="col-12 col-md-5 shadow p-4 bg-white rounded mx-3 my-3">
-                <h2 class="mb-4 text-center">Qeydiyyat</h2>
+
+                		<div class="animated-icons">
+			<i class="fab fa-github"></i>
+			<i class="fab fa-js"></i>
+			<i class="fab fa-html5"></i>
+			<i class="fab fa-css3-alt"></i>
+			<i class="fab fa-react"></i>
+			<i class="fab fa-node-js"></i>
+			<i class="fab fa-python"></i>
+		</div>
+                <h2 class="mb-4 text-center">Giriş</h2>
 
                 <form action="/Account/Register" method="post" id="registerForm" novalidate>
-                    <div class="text-danger mb-3">
-                        <!-- Burada ümumi validasiya xətaları əks olunacaq -->
-                    </div>
+    <div class="text-danger mb-3">
+        <!-- Validasiya xətaları burada görünəcək -->
+    </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Ad</label>
-                        <input name="Name" class="form-control" placeholder="Adınızı daxil edin" />
-                        <span class="invalid-feedback d-block"></span>
-                    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="Email" id="email" class="form-control" required />
+    </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Soyad</label>
-                        <input name="Lastname" class="form-control" placeholder="Soyadınızı daxil edin" />
-                        <span class="invalid-feedback d-block"></span>
-                    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Şifrə</label>
+        <input type="password" name="Password" id="password" class="form-control" required />
+    </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">İstifadəçi adı</label>
-                        <input name="UserName" class="form-control" placeholder="İstifadəçi adınızı daxil edin" />
-                        <span class="invalid-feedback d-block"></span>
-                    </div>
+    <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Giriş et</button>
+    </div>
+</form>
 
-                    <div class="mb-3">
-                        <label class="form-label">Email ünvanı</label>
-                        <input name="Email" type="email" class="form-control" placeholder="email@example.com" />
-                        <span class="invalid-feedback d-block"></span>
-                    </div>
+</div>
+<!-- Sağ tərəf: Animasiya ilə -->
+<div class="col-12 col-md-6 mx-3 my-3">
+    <div class="p-4 bg-light rounded h-100 d-flex flex-column justify-content-center align-items-center text-center border">
+        <h3 class="mb-3">Yenidən xoş gəlmisiniz!</h3>
+        <p>Daxil olun və fəaliyyətlərinizə davam edin.</p>
 
-                    <div class="mb-3">
-                        <label class="form-label">Parol</label>
-                        <input name="Password" type="password" class="form-control" placeholder="Ən az 6 simvol" />
-                        <span class="invalid-feedback d-block"></span>
-                    </div>
+        <!-- Login üçün uyğun Lottie animasiyası -->
+        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_touohxv0.json"
+                       background="transparent"
+                       speed="1"
+                       style="width: 280px; height: 200px;"
+                       loop
+                       autoplay>
+        </lottie-player>
+    </div>
+</div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Parolu təsdiqlə</label>
-                        <input name="ConfirmPasswor" type="password" class="form-control" placeholder="Parolu yenidən daxil edin" />
-                        <span class="invalid-feedback d-block"></span>
-                    </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Siz...</label>
-                        <select name="SelectedRole" class="form-select">
-                            <option value="">-- Seçin --</option>
-                            <option value="Freelancer">Freelancer</option>
-                            <option value="Employer">İşəgötürən</option>
-                        </select>
-                        <span class="text-danger"></span>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary w-100">Qeydiyyat</button>
-                </form>
-            </div>
-
-            <!-- Sağ tərəf: Animasiya ilə -->
-            <div class="col-12 col-md-6 mx-3 my-3">
-                <div class="p-4 bg-light rounded h-100 d-flex flex-column justify-content-center align-items-center text-center">
-                    <h3>Xoş gəldiniz!</h3>
-                    <p>Qeydiyyat formunu doldurun və saytda tam funksionallıq əldə edin.</p>
-
-                    <!-- Lottie animasiyası -->
-                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_5ngs2ksb.json"
-                                   background="transparent"
-                                   speed="1"
-                                   style="width: 300px; height: 200px;"
-                                   loop
-                                   autoplay>
-                    </lottie-player>
-                </div>
-            </div>
-
-        </div>
+</div>
     </div>
 		</main>
 		<!-- Footer -->

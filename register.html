@@ -21,6 +21,7 @@
 
 		/* Navbar */
 		.navbar {
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 			background-color: #ffffff !important;
 			transition: all 0.3s ease-in-out;
 			position: sticky;
@@ -475,7 +476,17 @@
 					}, 50);
 				}, 2000);
 			});
+			window.addEventListener('load', function () {
+				const mainContent = document.getElementById('main-content');
+				const preloader = document.getElementById('preloader');
 
+				preloader.style.display = 'none';
+				mainContent.style.display = 'block';
+			// Fade-in effekti üçün azca gecikmə əlavə olunur
+			setTimeout(() => {
+				mainContent.style.opacity = 1;
+			}, 100);
+	});
 		</script>
 	</div>
 </body>
